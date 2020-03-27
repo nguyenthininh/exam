@@ -17,6 +17,7 @@ class WebController extends Controller
     }
 
     public function studentStore(Request $request){
+
         $request->validate([
             "name" => "required|string",
             "age" => "required|numeric",
@@ -24,7 +25,7 @@ class WebController extends Controller
             "telephone" => "required|string"
         ]);
         try {
-            User::create([
+            Student::create([
                 "name" => $request->get("name"),
                 "age" => $request->get("age"),
                 "address" => $request->get("address"),

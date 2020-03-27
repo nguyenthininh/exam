@@ -19,38 +19,37 @@
 <div class="container">
     <div class="dien_thong_tin col-lg-6 col-lg-offset-3 div_form">
         <h1 class="text-center anh_td">Add Student</h1>
-        <form  role="form">
-
+        <form  role="form" action="{{url("/update")}}" method="POST">
+            @csrf
             <div class="form-group">
                 <label for="exampleInputName1"><b>Họ và Tên</b></label>
                     <!-- <input type="text" name="ten" class="form-control" id="exampleInputName1" placeholder="Họ và Tên"> -->
-                    <input type="text" class="form-control" id="inputName" placeholder="Họ và Tên" data-error="Vui lòng nhập tên" required>
+                    <input type="text" class="form-control" id="inputName" placeholder="Họ và Tên" data-error="Vui lòng nhập tên" name="name" required>
             </div>
 
             <div class="form-group ">
                 <label for="exampleInputAge"><b>Age</b></label>
                 <!-- <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email"> -->
-                <input type="number" class="form-control" id="inputAge" placeholder="Age" required>
+                <input type="number" class="form-control" id="inputAge" placeholder="Age" name="age" required>
 
             </div>
 
             <div class="form-group ">
                 <label for="exampleInputAddress1"><b>Address</b></label>
                 <!-- <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email"> -->
-                <input type="type" class="form-control" id="inputAdress" placeholder="Address" data-error="Vui lòng nhập address" required>
+                <input type="type" class="form-control" id="inputAdress" placeholder="Address" data-error="Vui lòng nhập address" name="address" required>
 
             </div>
 
             <div class="form-group">
                 <label for="exampleInputPhone1"><b>Số điện thoại</b></label>
                 <!-- <input type="number" name="phone"class="form-control" id="exampleInputPhone1" placeholder="Số điện thoại"> -->
-                <input type="number" class="form-control" id="inputPhone" placeholder="Số điện thoại" data-error="Vui lòng nhập số điện thoại" required>
+                <input type="number" class="form-control" id="inputPhone" placeholder="Số điện thoại" data-error="Vui lòng nhập số điện thoại" name="telephone" required>
 
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-warning">Cancel</button>
-                <button type="button" class="btn btn-info">Save</button>
+                <button type="submit" class="btn btn-info">Save</button>
 
             </div>
 

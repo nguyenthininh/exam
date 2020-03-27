@@ -22,5 +22,5 @@ Route::get("/listStudent","WebController@listStudent");
 //form_add_student
 Route::get("/create", "WebController@studentCreate");
 
-Route::get("/update", "WebController@studentStore");
+Route::post("/update", "WebController@studentStore");
 

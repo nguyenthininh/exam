@@ -18,9 +18,9 @@
 
         <div class="float-right pb-3">
             <!-- Button trigger modal add student -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-student">
+            <a href="{{url("/create")}}" class="btn btn-primary">
                 Add Student
-            </button>
+            </a>
         </div>
 
         {{--            <table class="table border-bottom border-left border-right" id="student_listing">--}}
@@ -41,12 +41,12 @@
             <tr>
                 <td class="text-center">#<?php echo $s['id'];?></td>
                 <td> {{$s->name}}</td>
-                <td>{{$s->age}}?></td>
+                <td>{{$s->age}}</td>
                 <td>{{$s->address}}</td>
                 <td>{{$s->telephone}}</td>
                 <td class="d-flex justify-content-around">
-                    <a href="{{url("/create")}}" data-target="#edit-student" data-toggle="modal">Add</a>
-                    <a href="#" data-target="#delete-student" data-toggle="modal">Delete</a>
+{{--                    <a href="{{url("/create")}}" data-target="#edit-student" data-toggle="modal">Add</a>--}}
+{{--                    <a href="#" data-target="#delete-student" data-toggle="modal">Delete</a>--}}
                 </td>
             </tr>
             <?php endforeach; ?>
