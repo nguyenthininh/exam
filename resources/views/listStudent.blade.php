@@ -45,7 +45,7 @@
                 <td>{{$s->address}}</td>
                 <td>{{$s->telephone}}</td>
                 <td class="d-flex justify-content-around">
-                    <a href="#" data-target="#edit-student" data-toggle="modal">Add</a>
+                    <a href="{{url("/create")}}" data-target="#edit-student" data-toggle="modal">Add</a>
                     <a href="#" data-target="#delete-student" data-toggle="modal">Delete</a>
                 </td>
             </tr>

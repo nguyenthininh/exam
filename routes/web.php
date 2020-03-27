@@ -20,4 +20,7 @@ Route::get('/', function () {
 Route::get("/listStudent","WebController@listStudent");
 
 //form_add_student
-Route::get("/add-student", "WebController@addStudent");
+Route::get("/create", "WebController@studentCreate");
+
+Route::get("/update", "WebController@studentStore");
+
