@@ -20,6 +20,8 @@
     <div class="dien_thong_tin col-lg-6 col-lg-offset-3 div_form">
         <h1 class="text-center anh_td">Khảo sát</h1>
         <form id="contactForm">
+<!--        <form  role="form" action="{{url("/update")}}" method="POST">-->
+
             <div class="form-group">
                 <label for="exampleInputName1"><b>Họ và Tên</b></label>
                     <!-- <input type="text" name="ten" class="form-control" id="exampleInputName1" placeholder="Họ và Tên"> -->
@@ -70,7 +72,7 @@
 
 
         $.ajax({
-            url: "/contact-form",
+            url: "/exam/public/contact-form",
             type:"POST",
             data:{
                 "_token": "{{ csrf_token() }}",
