@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script !src="https://kit.fontawesome.com/a076d05399.js?fbclid=IwAR0JdE3rdMmZhGRsXRnUAHg_WkrC1e9tI6EwRWf96lJt8416f6KyJ5VODJg"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-
+{{--    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"--}}
+{{--            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>--}}
 
     <title>Khảo sát sinh viên</title>
 </head>
@@ -19,9 +18,9 @@
 <div class="container">
     <div class="dien_thong_tin col-lg-6 col-lg-offset-3 div_form">
         <h1 class="text-center anh_td">Khảo sát</h1>
-        <form id="contactForm">
-<!--        <form  role="form" action="{{url("/update")}}" method="POST">-->
+        <form id="contactForm" action="{{url("/contact-form")}}" method="POST">
 
+           @csrf
             <div class="form-group">
                 <label for="exampleInputName1"><b>Họ và Tên</b></label>
                     <!-- <input type="text" name="ten" class="form-control" id="exampleInputName1" placeholder="Họ và Tên"> -->

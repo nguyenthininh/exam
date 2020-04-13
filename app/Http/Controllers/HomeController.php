@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,7 +13,7 @@ class HomeController extends Controller
     }
 
     public function store(Request $request) {
-        $contact = new Contact;
+        $contact = new Contact();
 
         $contact->name = $request->name;
         $contact->email = $request->email;
