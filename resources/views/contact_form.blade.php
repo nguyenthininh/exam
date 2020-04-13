@@ -12,15 +12,14 @@
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
 
-    <title>Form add Student</title>
+    <title>Khảo sát sinh viên</title>
 </head>
 <body>
 
 <div class="container">
     <div class="dien_thong_tin col-lg-6 col-lg-offset-3 div_form">
-        <h1 class="text-center anh_td">Add Student</h1>
-        <form  role="form" action="{{url("/update")}}" method="POST">
-            @csrf
+        <h1 class="text-center anh_td">Khảo sát</h1>
+        <form id="contactForm">
             <div class="form-group">
                 <label for="exampleInputName1"><b>Họ và Tên</b></label>
                     <!-- <input type="text" name="ten" class="form-control" id="exampleInputName1" placeholder="Họ và Tên"> -->
@@ -28,11 +27,10 @@
             </div>
 
             <div class="form-group ">
-                <label for="exampleInputAge"><b>Age</b></label>
-                <!-- <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email"> -->
-                <input type="number" class="form-control" id="inputAge" placeholder="Age" name="age" required>
-
+                <label for="exampleInputAge"><b>Email</b></label>
+                 <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
             </div>
+
 
             <div class="form-group ">
                 <label for="exampleInputAddress1"><b>Address</b></label>
@@ -44,18 +42,50 @@
             <div class="form-group">
                 <label for="exampleInputPhone1"><b>Số điện thoại</b></label>
                 <!-- <input type="number" name="phone"class="form-control" id="exampleInputPhone1" placeholder="Số điện thoại"> -->
-                <input type="number" class="form-control" id="inputPhone" placeholder="Số điện thoại" data-error="Vui lòng nhập số điện thoại" name="telephone" required>
+                <input type="number" class="form-control" id="inputPhone" placeholder="Số điện thoại" data-error="Vui lòng nhập số điện thoại" name="number" required>
 
             </div>
 
             <div class="modal-footer">
-                <button type="submit" class="btn btn-info">Save</button>
+                <button type="submit" id="submit" class="btn btn-info">Save</button>
 
             </div>
 
         </form>
     </div>
 </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+<script type="text/javascript">
+
+    $('#contactForm').on('submit',function(event){
+        event.preventDefault();
+
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var number = $('#number').val();
+        var address = $('#address').val();
+
+
+        $.ajax({
+            url: "/contact-form",
+            type:"POST",
+            data:{
+                "_token": "{{ csrf_token() }}",
+                name:name,
+                email:email,
+                number:number,
+                address:address,
+
+            },
+            success:function(response){
+                console.log(response);
+            },
+        });
+    });
+</script>
 
 </body>
 </html>

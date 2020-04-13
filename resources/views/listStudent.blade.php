@@ -14,7 +14,7 @@
 <body>
 <div class="title">
     <div class="container">
-        <h1>List Student</h1>
+        <h1>Phản hồi</h1>
 
         <div class="float-right pb-3">
             <!-- Button trigger modal add student -->
@@ -23,16 +23,15 @@
             </a>
         </div>
 
-        {{--            <table class="table border-bottom border-left border-right" id="student_listing">--}}
+        <table class="table border-bottom border-left border-right" id="student_listing">
         <table class="table table-bordered" id="student_listing">
             <thead class="thead-light">
             <th scope="col" class="text-center" style="width: 5%">ID</th>
             <th scope="col" style="width: 25%">Name</th>
+            <th scope="col" style="width: 25%">Email</th>
             <th scope="col" style="width: 25%">Age</th>
             <th scope="col" style="width: 15%">Address</th>
             <th scope="col" style="width: 15%">Telephone</th>
-            <th scope="col" style="width: 15%">Action</th>
-
 
 
             </thead>
@@ -45,7 +44,7 @@
                 <td>{{$s->address}}</td>
                 <td>{{$s->telephone}}</td>
                 <td class="d-flex justify-content-around">
-{{--                    <a href="{{url("/create")}}" data-target="#edit-student" data-toggle="modal">Add</a>--}}
+                    <a href="{{url("/create")}}" data-target="#edit-student" data-toggle="modal">Phản hồi</a>
 {{--                    <a href="#" data-target="#delete-student" data-toggle="modal">Delete</a>--}}
                 </td>
             </tr>
